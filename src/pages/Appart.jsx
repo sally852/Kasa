@@ -3,6 +3,7 @@ import data from './../assets/JsonFileP6.json'
 import './../styles/appart.css';
 import { useState } from 'react';
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
 
 
 function Appartement (){
@@ -42,9 +43,7 @@ function Appartement (){
                         <p>{appart.host.name}</p>
                         <img src={appart.host.picture} alt={appart.host.name} />
                     </div> 
-                    <div className='rating' >
-                        {appart.rating}
-                    </div>
+                    <StarRating/>
                 </div>
             </div>
 
@@ -55,7 +54,8 @@ function Appartement (){
                             <li>
                                 <p>Description</p>
                                 <button className="button-toggle" onClick={handleToggleDescription}>
-                                {isOpenDescription ? <FaChevronDown /> : <FaChevronUp/> }
+                                {isOpenDescription ? <FaChevronDown size={24}/> : <FaChevronUp size={24}/>}
+
                                 </button>
                             </li>
                             <div className={`text-toggle ${isOpenDescription ? 'open' : ''}`}>
@@ -66,7 +66,7 @@ function Appartement (){
                         <li>
                             <p>Amenities</p>
                             <button className="button-toggle" onClick={handleToggleAmenities}>
-                            {isOpenAmenities ? <FaChevronDown/> : <FaChevronUp/> }
+                            {isOpenAmenities ? <FaChevronDown size={24}/> : <FaChevronUp size={24}/> }
                             </button>
                         </li>
                         <div className={`text-toggle ${isOpenAmenities ? 'open' : ''}`}>
@@ -136,6 +136,25 @@ function ImageCarousel() {
   );
 }
 
+
+function StarRating() {
+    const stars = [];
+    const { id } = useParams();
+    const appart = data.find((item) => item.id === id);
+    const rating = appart?.rating || [];
+  
+    for (let i = 1; i <= 5; i++) {
+      stars.push(
+        <FaStar
+          key={i}
+          color={i <= rating ? "#ff6060" : "#e3e3e3"} 
+          size={28}
+        />
+      );
+    }
+  
+    return <div className="star-rating">{stars}</div>;
+  }
 
 
 

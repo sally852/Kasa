@@ -5,7 +5,7 @@ function PageFooter() {
     return(
         <div className='footer'>
             <img src={footerImg} alt="kasa logo" />
-            <p>&copy; 2025 Kasa. All rights reserved.</p>Security666666000 size={24}
+            <p>&copy; 2025 Kasa. All rights reserved.</p>
         </div>
     );
 }
