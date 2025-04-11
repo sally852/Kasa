@@ -1,6 +1,14 @@
 .home{
-  max-width: 1240px;
-  margin: 0 50px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+
+@media (max-width: 375px) {
+  .home{
+    padding: 0 30px;
+  }
 }
 
 

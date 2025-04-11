@@ -1,6 +1,8 @@
 .containerr {
-    align-items: center; 
-    margin: 0 50px; 
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 80px;
+    box-sizing: border-box;
 }
 .carousel{
     position: relative;
@@ -77,7 +79,8 @@
 
 .host p {
     width: 64px;
-    margin-right: 10px;
+    margin-right: 15px;
+    margin-bottom: 50px;
     color: #FF6060;
     font-weight: 400;
     font-size: 18px;
@@ -90,64 +93,163 @@
     margin-bottom: 40px;
 
 }
-.part2{
-    display: flex;
-    gap: 20px;
-    margin-top: 20px;
-}
+
 
 .container-toggle {
     margin-top: 20px;
-    margin-bottom: 50px;  
+    margin-bottom: 50px;
 }
-.list-toggle{
+
+.list-toggle {
     display: flex;
-    gap: 76px;
+    gap: 8%;
+    padding: 10px 0px 30px;
+    list-style: none;
+    align-items: flex-start;
 }
-.container-toggle ul{
-  padding: 0; 
+
+.list-toggle .toggle-list {
+    background-color: #ff6060;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 582px;
+    width: 100%;
+    
 }
-.container-toggle li{
-    display: flex;  
+
+.toggle-header {
+    display: flex;
     justify-content: space-between;
     align-items: center;
     height: 52px;
-    width: 582px;
-    background-color: #FF6060;
-    border-radius: 10px;
+    padding: 0 20px;
 }
 
-.container-toggle li p{
+.toggle-header p {
     color: #fff;
     font-weight: 700;
     font-size: 18px;
-    padding-left: 20px;
+    margin: 0;
+  
 }
 
 .button-toggle {
-    padding-right: 20px;
     font-size: 30px;
     font-weight: 500;
     color: #fff;
     border: none;
-    border-radius: 10px;
-    background-color: #FF6060;
+    background-color: transparent;
+    cursor: pointer;
     transition: 0.3s;
+   
 }
 
 .text-toggle {
     max-height: 0;
     overflow: hidden;
-    transition:  0.5s ease, padding 0.5s ease;
-    padding: 0 10px;
+    transition: 0.5s ease, padding 0.5s ease;
+    padding: 0 20px;
+    background-color: #fff;
+    color: #333;
 }
 
 .text-toggle.open {
-    max-height: 200px; 
-    padding: 10px;
+    max-height: 200px;
+    padding: 10px 20px;
+}
+.list-amenities{
+    margin-top: 10px;
+}
+.amentites-list{
+    margin-bottom: 5px; 
 }
 
-.equip li{
-    background-color: #fff;
-    height: 29px;
+.equip {
+    padding-left: 20px;
+    margin: 0;
 }
+
+@media (max-width: 375px) {
+    .containerr{
+        padding: 0 30px;
+    }
+    .carousel-img{
+        border-radius: 10px;
+        height: 255px;
+        margin-bottom: 0px;
+    }
+    .carousel-counter {
+        bottom: 20px;
+    }
+    .carousel-btn {
+        top: 40%;
+        font-size: 35px;
+        padding: 0 5px;
+    }
+    .part1 {
+        flex-direction: column;
+    }
+    .part1 .title{
+        font-weight: 450;
+        font-size: 32px;
+    }
+    .part1 .location{
+        font-weight: 600;
+        font-size: 18px;
+        margin-top: 5px;
+    }
+    .tags{
+        margin-top: 20px;
+    }
+    .tags ul{
+        padding: 0;
+    }
+    .tags li {
+        font-weight: 600;
+        font-size: 13px;
+        padding: 8px 10px;
+        border-radius: 10px;
+        margin-right: 5px;
+        margin-bottom: 10px;
+    }
+    .right {
+        display: flex;
+        height: 60px;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    .host{
+        margin-top: 0;
+    }
+    .host p {
+        width: 64px;
+        margin-right: 15px;
+        margin-bottom: 50px;
+        color: #FF6060;
+        font-weight: 400;
+        font-size: 13px;
+    }
+    .host img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        margin-bottom: 40px;
+    }
+    .star-rating{
+        
+    }
+    .part2{
+        flex-direction: column;
+        gap: 200px;
+    }
+    .container-toggle {
+      
+    }
+    .list-toggle {
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px 0px 30px;
+    
+    }
+}
+  

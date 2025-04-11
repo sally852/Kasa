@@ -1,0 +1,46 @@
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;        
+}
+
+.page-container img {
+    width: 555px;
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+
+.page-container p {
+    margin-bottom: 80px;
+    font-size: 36px;
+    font-weight: 400;
+    color: #FF6060;
+}
+
+.page-container a {
+    color: black;
+    margin-bottom: 100px;
+}
+
+.page-container a:hover {
+    color: rgb(85, 85, 221);
+}
+  
+@media (max-width: 375px) {
+    .page-container img {
+        width: 200px;
+        margin-top: 70px;
+        margin-bottom: 100px;
+    }
+    .page-container p {
+        margin-bottom: 100px;
+        font-size: 18px;
+        font-weight: 400;
+        width: 250px;
+        text-align: center; 
+    }
+    .page-container a {
+        margin-bottom: 100px;
+        padding: 12px 24px;
+    }
+}

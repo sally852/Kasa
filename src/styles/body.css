@@ -1,14 +1,13 @@
 
 
 .toggle-container {
-  width: 100%;
-  max-width: 1123px;
-  margin: auto;
+  padding: 0 7%; 
 }
 .toggle-container ul{
   list-style: none; 
   gap: 900px;
   margin-right: 50px;
+  
 }
 
 .toggle-container li{
@@ -16,7 +15,7 @@
   justify-content: space-between;
   margin-bottom: 30px;
   background-color: #FF6060;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .toggle-container li p{
@@ -32,21 +31,39 @@
   font-weight: 500;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #FF6060;
-  transition: background-color 0.3s;
+  transition:  0.3s;
 }
 
 .toggle-text {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease, padding 0.5s ease;
+  transition: 0.5s ease, padding 0.5s ease;
   padding: 0 10px;
 }
 
 .toggle-text.open {
   max-height: 200px; 
   padding: 10px;
+}
+
+@media (max-width: 375px) {
+  .toggle-container {
+    padding: 0; 
+ }
+ .toggle-container ul{
+  margin-right: 0;
+  padding: 0;
+}
+.toggle-container li p{
+  font-weight: 700;
+  font-size: 18px;
+  padding-left: 15px;
+}
+.toggle-button{
+  font-size: 23px;
+}
 }
   
   

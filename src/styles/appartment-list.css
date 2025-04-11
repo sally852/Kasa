@@ -57,4 +57,21 @@
     text-align: left;
     box-sizing: border-box;
   }
+
+  @media (max-width: 375px) {
+    .appartment-list {
+      background-color: #fff;
+      padding: 0;
+    }
+    .appartment-list ul {
+      flex-direction: column;
+      gap: 30px;
+      padding: 0;
+      justify-content: center;
+      border-radius: 25px;
+    }
+    .appartment-list li {
+      width: 100%;
+    }
+  }
   

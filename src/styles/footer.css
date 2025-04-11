@@ -1,13 +1,24 @@
 .footer {
-    background-color: #000000;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 20px;
-    margin: 0 auto;
-    text-align: center;
-    box-sizing: border-box;
+  width: 100%;
+  max-width: 1440px;
+  background-color: #000000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+@media (max-width: 375px) {
+  .footer img{
+    height: 40px;
+    width: 120px;
   }
+  .footer P{
+    font-weight: 400;
+    font-size: 14px;
+  }
+}
   

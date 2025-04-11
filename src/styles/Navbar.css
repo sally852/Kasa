@@ -1,5 +1,7 @@
 .kasa-navbar {
-  margin: 25px 60px 45px;
+  max-width: 1440px;
+  margin:  0 auto;
+  padding: 25px 90px 45px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,4 +28,22 @@
 .navigation-links .active-link {
   border-bottom: 1px solid black;
   color: black;
+}
+
+
+@media (max-width: 375px) {
+.kasa-navbar {
+  padding: 20px 30px 40px;
+}
+.logo-kasa{
+  width: 120px;
+  height: 45px;
+}
+.navigation-links {
+  gap: 20px;
+}
+.navigation-links a {
+  font-size: 15px;
+  font-weight: 500;
+}
 }

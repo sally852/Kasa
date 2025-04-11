@@ -1,6 +1,5 @@
 .header-image {
   position: relative;
-  width: 100%;
   max-width: 1440px;
   height: 190px; 
   margin: 0 auto;
@@ -30,6 +29,20 @@
   text-align: center;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6); 
   
+}
+
+@media (max-width: 375px) {
+  .header-image{
+    height: 130px; 
+    margin-bottom: 30px;
+  }
+  .header-title{
+    left: 55%;
+    right: 0;
+    text-align: start;
+    font-size: 26px;
+    width: 100%;
+  }
 }
   
   

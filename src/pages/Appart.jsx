@@ -1,9 +1,13 @@
+import StarRating from './../components/StarRating.js'
+import ImageCarousel from './../components/ImageCarousel.js'
 import { useParams } from 'react-router-dom'
 import data from './../assets/JsonFileP6.json'
 import './../styles/appart.css';
 import { useState } from 'react';
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-import { FaStar } from "react-icons/fa";
+import { Navigate } from 'react-router-dom'
+
+
 
 
 function Appartement (){
@@ -18,9 +22,8 @@ function Appartement (){
     const handleToggleAmenities = () => setIsOpenAmenities(!isOpenAmenities);
 
     if (!appart) {
-        return <div>No</div>;
+        return <Navigate to="/error" />;
     }
-
     return (
         <div className='containerr'>
 
@@ -48,39 +51,34 @@ function Appartement (){
             </div>
 
             <div className='container-toggle'> 
-                <ul>
-                    <div className='list-toggle'>
-                        <div>
-                            <li>
-                                <p>Description</p>
-                                <button className="button-toggle" onClick={handleToggleDescription}>
+                <ul className="list-toggle">  
+                    <li className='toggle-list'>
+                        <div className="toggle-header">
+                            <p>Description</p>
+                            <button className="button-toggle" onClick={handleToggleDescription}>
                                 {isOpenDescription ? <FaChevronDown size={24}/> : <FaChevronUp size={24}/>}
-
-                                </button>
-                            </li>
-                            <div className={`text-toggle ${isOpenDescription ? 'open' : ''}`}>
-                                <p>{appart.description}</p>
-                            </div>
-                        </div>
-                    <div>
-                        <li>
+                            </button>
+                        </div>  
+                        <div className={`text-toggle ${isOpenDescription ? 'open' : ''}`}>
+                           <p>{appart.description}</p>
+                        </div> 
+                    </li>
+                    
+                    <li className='toggle-list'>
+                        <div className="toggle-header">
                             <p>Amenities</p>
                             <button className="button-toggle" onClick={handleToggleAmenities}>
-                            {isOpenAmenities ? <FaChevronDown size={24}/> : <FaChevronUp size={24}/> }
+                                {isOpenAmenities ? <FaChevronDown size={24}/> : <FaChevronUp size={24}/> }
                             </button>
-                        </li>
-                        <div className={`text-toggle ${isOpenAmenities ? 'open' : ''}`}>
-                            <p className='equip'>
-                                <ul>
-                                    {appart.equipments.map((equip, index) => (
-                                        <li key={index} >{equip}</li>
-                                    ))}
-                                </ul>  
-                            </p>
                         </div>
-                    </div>
-                    </div>
-                 
+                        <div className={`text-toggle ${isOpenAmenities ? 'open' : ''}`}>
+                            <ul className='list-amenities'>
+                                {appart.equipments.map((equip, index) => (
+                                    <li key={index} className='amentites-list'>{equip}</li>
+                                ))}
+                            </ul>  
+                        </div>
+                    </li>
                 </ul>
             </div> 
 
@@ -93,68 +91,10 @@ export default Appartement;
 
 
 
-function ImageCarousel() {
-  const { id } = useParams();
-  const appart = data.find((item) => item.id === id);
-  const images = appart?.pictures || [];
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-
- 
-
-  const nextImage = () => {
-    setCurrentIndex((prev) => (prev + 1) % images.length);
-  };
-
-  const prevImage = () => {
-    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
-
-  return (
-    <div className="carousel">
-      <img
-        src={images[currentIndex]}
-        alt={`Slide ${currentIndex + 1}`}
-        className="carousel-img"
-      />
-
-      {images.length > 1 && (
-        <>
-          <button className="carousel-btn left" onClick={prevImage}>
-            &#10094;
-          </button>
-          <button className="carousel-btn right" onClick={nextImage}>
-            &#10095;
-          </button>
-        </>
-      )}
-
-      <div className="carousel-counter">
-        {currentIndex + 1} / {images.length}
-      </div>
-    </div>
-  );
-}
 
 
-function StarRating() {
-    const stars = [];
-    const { id } = useParams();
-    const appart = data.find((item) => item.id === id);
-    const rating = appart?.rating || [];
-  
-    for (let i = 1; i <= 5; i++) {
-      stars.push(
-        <FaStar
-          key={i}
-          color={i <= rating ? "#ff6060" : "#e3e3e3"} 
-          size={28}
-        />
-      );
-    }
-  
-    return <div className="star-rating">{stars}</div>;
-  }
+
+
 
 
 
