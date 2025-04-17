@@ -1,0 +1,44 @@
+
+.toggle-container {
+    padding: 0 4%; 
+}
+
+
+.toggle {
+    display: flex;  
+    justify-content: space-between;
+    margin-bottom: 30px;
+    background-color: #FF6060;
+    border-radius: 10px;
+}
+
+.toggle p{
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    padding-left: 20px;
+}
+
+.toggle button {
+    padding-right: 20px;
+    font-size: 28px;
+    font-weight: 500;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    background-color: #FF6060;
+    transition:  0.3s;
+}
+
+.toggle-text {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.5s ease, padding 0.5s ease;
+    padding: 0 10px;
+}
+
+.toggle-text.open {
+    max-height: 200px; 
+    padding: 10px;
+}
+  

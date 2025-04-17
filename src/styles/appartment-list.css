@@ -62,6 +62,7 @@
     .appartment-list {
       background-color: #fff;
       padding: 0;
+      border-radius: 0%;
     }
     .appartment-list ul {
       flex-direction: column;

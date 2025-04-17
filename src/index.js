@@ -16,14 +16,13 @@ root.render(
     <Router>
         <Navbar/>
         <Routes>
-            <Route path="/" element={<Home />} /> 
-            <Route path="/about" element={<About />} /> 
-            <Route path="/appart/:id" element={<Appart />} />
-            <Route path="*" element={<Error />} />
+          <Route path="/" element={<Home />} /> 
+          <Route path="/about" element={<About />} /> 
+          <Route path="/appart/:id" element={<Appart />} />
+          <Route path="*" element={<Error />} />
         </Routes>  
         <PageFooter/> 
     </Router>
-    
   </React.StrictMode>
 );
 

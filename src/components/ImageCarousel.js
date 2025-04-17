@@ -6,6 +6,7 @@ import { useState } from 'react';
 function ImageCarousel() {
     const { id } = useParams();
     const appart = data.find((item) => item.id === id);
+    
     const images = appart?.pictures || [];
   
     const [currentIndex, setCurrentIndex] = useState(0);

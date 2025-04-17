@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
 import data from '../assets/JsonFileP6.json'
 import { FaStar } from "react-icons/fa";
+
 function StarRating() {
     const stars = [];
     const { id } = useParams();

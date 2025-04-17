@@ -95,11 +95,23 @@
 }
 
 
+
+.container-toggle {
+    display: flex;
+    justify-content: space-between;
+    gap: 8%;
+}
+
+.container-toggle > div {
+    width: 50%;
+    margin-top: 30px;
+    padding: 0;
+}
+
 .container-toggle {
     margin-top: 20px;
     margin-bottom: 50px;
 }
-
 .list-toggle {
     display: flex;
     gap: 8%;
@@ -227,7 +239,7 @@
         margin-bottom: 50px;
         color: #FF6060;
         font-weight: 400;
-        font-size: 13px;
+        font-size: 14px;
     }
     .host img {
         width: 45px;
@@ -235,15 +247,17 @@
         border-radius: 50%;
         margin-bottom: 40px;
     }
-    .star-rating{
-        
-    }
+    
     .part2{
         flex-direction: column;
         gap: 200px;
     }
     .container-toggle {
-      
+        flex-wrap: wrap;
+      }
+    .container-toggle > div {
+      width: 100%;
+      margin-top: 0;
     }
     .list-toggle {
         flex-direction: column;
